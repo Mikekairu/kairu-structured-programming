@@ -1,35 +1,23 @@
 #include <stdio.h>
 
-
-void incrementByValue(int num);
-void incrementByReference(int *ptr);
-
 int main() {
-    int num = 10;
+    int arr[6][4] = {
+        {1,  2,  3,  4},
+        {5,  6,  7,  8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16},
+        {17, 18, 19, 20},
+        {21, 22, 23, 24}
+    };
 
-    printf("Original value: %d\n\n", num);
+    int i, j;
 
 
-    printf("Pass by Value Example:\n");
-    printf("Before incrementByValue: %d\n", num);
-    incrementByValue(num);
-    printf("After incrementByValue: %d\n\n", num);
-
-
-    printf("Pass by Reference Example:\n");
-    printf("Before incrementByReference: %d\n", num);
-    incrementByReference(&num);
-    printf("After incrementByReference: %d\n", num);
+    for (i = 0; i < 6; i++) {
+        for (j = 0; j < 4; j++) {
+            printf("arr[%d][%d] = %d\n", i, j, arr[i][j]);
+        }
+    }
 
     return 0;
-}
-
-void incrementByValue(int num) {
-    num = num + 1;
-    printf("Inside incrementByValue: %d\n", num);
-}
-
-void incrementByReference(int *ptr) {
-    *ptr = *ptr + 1;
-    printf("Inside incrementByReference: %d\n", *ptr);
 }
